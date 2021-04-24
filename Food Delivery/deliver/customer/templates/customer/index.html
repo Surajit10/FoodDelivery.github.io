@@ -1,0 +1,97 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static 'style.css '%}" />
+  <title>Meals.com</title>
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Bree+Serif&display=swap" rel="stylesheet" />
+
+
+</head>
+
+<body>
+  <nav id="navbar">
+    <div id="logo">
+      <img src="{% static 'logo.jpg' %}" alt="Meals.com" />
+    </div>
+    <ul>
+      <li class="item"><a href="#home">Home</a></li>
+      <li class="item"><a href="#services">Services</a></li>
+      <li class="item"><a href="#client-section">About Us</a></li>
+      <li class="item"><a href="{% url 'contact' %}">Contact Us</a></li>
+       <li class="item"><a href="{% url 'menu' %}">Menu</a></li>
+      <li><a>Hello, {{request.user}}</a></span>
+      <li><a href="{% url 'logout' %}">Logout</a></li>
+    </ul>
+  </nav>
+
+  <section id="home">
+    <h1 class="h-primary">Welcome to Meals.com</h1>
+    <p>
+      Are You Hungry? Don't Wait
+    </p>
+    <input class="btn btn-success btn-lg" type="button" value="Order Now!"
+      onclick="location.href='{% url 'order' %}'" />
+  </section>
+
+  <section class="services-container">
+    <h1 class="h-primary center">Our Services</h1>
+    <div id="services">
+      <div class="box">
+        <img src="{% static 'pizza.jpeg' %}" alt="" />
+        <h2 class="h-secondary center"><b>Food Catering</b></h2>
+        <p class="center" style="font-size:20px;">
+          <b>We make your events Memorable with our Flavours</b>
+        </p>
+      </div>
+      <div class="box">
+        <img src="{% static 'image2.jpeg' %}" alt="" />
+        <h2 class="h-secondary center"><b>Food Ordering</b></h2>
+        <p class="center" style="font-size:20px;">
+          <b>Eat the Food You Dream about at Affordable prices</b>
+      </div>
+      <div class="box">
+        <img src="{% static 'delivery.jpg' %}" alt="" />
+        <h2 class="h-secondary center"><b>Food Delivery</b></h2>
+        <p class="center" style="font-size:20px;">
+          <b>Best Services to Fullfill Your Expectations</b>
+        </p>
+      </div>
+    </div>
+  </section>
+  <section id="client-section">
+    <h1 class="h-primary center">Our Partners </h1>
+    <div id="clients">
+      <div class="client-items">
+        <img src="{% static 'swiggy-logo.jpg' %}" alt="Our Client" style="width:150px;height:150px;"/>
+      </div>
+      <div class="client-items">
+        <img src="{% static 'ubereats-logo.jpg' %}" alt="Our Client" style="width:150px;height:150px;"/>
+      </div>
+      <div class="client-items">
+        <img src="{% static 'zomato-logo.jpg' %}" alt="Our Client" style="width:150px;height:150px;">
+      </div>
+      <div class="client-items">
+        <img src="{% static 'foodpanda-logo.jpg' %}" alt="Our Client" style="width:150px;height:150px;">
+      </div>
+    </div>
+  </section>
+
+
+
+  <div class="footer">
+    <p>Copyright © 2021 by Surajit Mondal  ,Sidharth Gandhi  ,Praveer Dwivedi</p>
+  </div>
+
+</body>
+
+</html>
